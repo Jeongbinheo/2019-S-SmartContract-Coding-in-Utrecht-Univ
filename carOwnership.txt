@@ -1,0 +1,79 @@
+pragma solidity ^0.4.12;
+
+contract CarOwnership {
+
+
+    struct CarMasterInfo {
+       
+       CarRecord carRecord;
+       repairRecord [] repairRecords;
+       accidentRecord [] accidentRecords;
+       transanctionRecord [] transanctionRecords;
+       rentalRecord [] rentalRecords;
+    }
+    
+    
+    struct CarRecord
+    {
+        string dateOfMainterancet;
+        string originOfMainternace;
+        string vin;
+        string model;
+        string make;
+        int numCyclinders;
+        int numEngine;
+        int mileage;
+    }
+
+    struct repairRecord
+    {
+        string dateRepaired;
+        string timeRepaired;
+        string service;
+    }
+    
+    struct accidentRecord
+    {
+        string dateAccident;
+        string timeAccident;
+        string description;
+    }
+    
+    struct transanctionRecord
+    {
+        string dateTransanction;
+        string amount;
+        string buyerDesc;
+        string sellerDesc;
+    }
+    
+    struct rentalRecord
+    {
+        string dateRental;
+        int rentalDays;
+        string rentToDesc;
+        string rentByDesc;
+        
+    }
+
+
+         
+    function setCarRecord(string _dateOfMainterancet,
+        string _originOfMainternace,
+        string _vin,
+        string _model,
+        string _make,
+        int _numCyclinders,
+        int _numEngine,
+        int _mileage)
+    {
+        dateOfMainterancet = _dateOfMainterancet;
+        originOfMainternace = ;
+        string vin;
+        string model;
+        string make;
+        int numCyclinders;
+        int numEngine;
+        int mileage;
+    }
+}

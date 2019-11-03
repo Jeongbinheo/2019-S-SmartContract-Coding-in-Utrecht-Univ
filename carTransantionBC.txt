@@ -1,0 +1,134 @@
+pragma solidity ^0.4.12;
+
+contract CarTransanctionBC 
+{
+    uint public currentBalance;
+    uint private transanctionCount;//count how many repair?
+    
+    address public myaddress =0x068eF6F367c6E54266A14041dCE460D5A62dDb3e;
+    address public seller=0x43EFa709c7f973667232dEFf99F79D5399cd8aAA;
+
+    function awardTokken(uint amount ) public // award tokken function
+    {
+        seller.transfer(amount);
+    }
+    
+    function depositTokken()public payable
+    {// deposit` tokken function
+
+    }    
+    
+    function withdraw() public
+    {
+        myaddress.transfer(address(this).balance);
+    }
+    
+    function getBallance() public
+    {
+        currentBalance  = address(this).balance;
+    }
+    
+
+    function concenString(string str1,string str2) public returns (string)
+    {
+        
+        bytes memory newString;
+        
+        bytes memory str1b = bytes(str1);
+        bytes memory str2b = bytes(str2);
+        
+        uint str1l=bytes(str1).length;
+        uint str2l=bytes(str2).length;
+        
+        uint a = 0;
+        uint b = 0;
+        
+        for(uint i=0; i< (str1l+str2l); i++)
+        {
+            
+            if(a<str1l)
+            {
+                newString[i]=str1b[a] ;
+                a=a+1;
+                
+            }else
+            {
+                newString[i]=str2b[b];
+                b=b+1;
+            }
+            
+        }
+        
+        return string(newString);
+    }
+    
+    struct transanctionRecord
+    {
+        string dateTransanction;
+        string amount;
+        string buyerDesc;
+        string sellerDesc;
+    }
+    
+    mapping(uint => transanctionRecord) trans; // craete constructor by mapping
+    
+    function setTransanctionRecord(
+        string _dateTransanction,
+        string _amount,
+        string _buyerDesc,
+        string _sellerDesc)
+    {
+        trans[transanctionCount].dateTransanction = _dateTransanction; //linked the constructor
+        trans[transanctionCount].amount = _amount;
+        trans[transanctionCount].buyerDesc = _buyerDesc;
+        trans[transanctionCount].sellerDesc = _sellerDesc;
+        
+        addTransanctionCount();
+        
+        awardTokken(10); // input information, give tokken 10
+    }
+    
+
+    // individual print
+    function getDataTransanction() public returns (string)
+    {
+        string memory str;
+        
+        for(uint i=0; i<transanctionCount; i++)
+        {
+
+            concenString(str,trans[transanctionCount].dateTransanction);
+            concenString(str,",");
+            
+            concenString(str,trans[transanctionCount].amount);
+            concenString(str,",");
+            
+            concenString(str,trans[transanctionCount].buyerDesc);
+            concenString(str,",");
+            
+            concenString(str,trans[transanctionCount].sellerDesc);
+            concenString(str,",");
+            
+            return str;
+        }
+    }
+    
+    
+     function CarTransanctionBC() public
+    {
+        transanctionCount=0;
+        currentBalance=0;
+        
+    }
+    
+    function addTransanctionCount() public
+    {
+        transanctionCount++;
+    }
+    
+    function getTransanctionCount() public returns (uint)
+    {
+        return transanctionCount;
+    }  
+    
+}

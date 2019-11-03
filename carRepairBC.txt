@@ -1,0 +1,131 @@
+pragma solidity ^0.4.12;
+
+contract CarRepairBC
+{
+    uint public currentBalance;
+    uint private repairCount;//count how many repair?
+    
+    address public myaddress =0x068eF6F367c6E54266A14041dCE460D5A62dDb3e;
+    address public mainTainence=0x43EFa709c7f973667232dEFf99F79D5399cd8aAA;
+
+    function awardTokken(uint amount ) public // award tokken function
+    {
+        mainTainence.transfer(amount);
+    }
+    
+    function depositTokken()public payable
+    {// deposit` tokken function
+
+    }    
+    
+    function withdraw() public
+    {
+        myaddress.transfer(address(this).balance);
+    }
+    
+    function getBallance() public
+    {
+        currentBalance  = address(this).balance;
+    }
+
+    function concenString(string str1,string str2) public returns (string)
+    {
+        
+        bytes memory newString;
+        
+        bytes memory str1b = bytes(str1);
+        bytes memory str2b = bytes(str2);
+        
+        uint str1l=bytes(str1).length;
+        uint str2l=bytes(str2).length;
+        
+        uint a = 0;
+        uint b = 0;
+        
+        for(uint i=0; i< (str1l+str2l); i++)
+        {
+            
+            if(a<str1l)
+            {
+                newString[i]=str1b[a] ;
+                a=a+1;
+                
+            }else
+            {
+                newString[i]=str2b[b];
+                b=b+1;
+            }
+            
+        }
+        
+        return string(newString);
+    }
+    
+    struct repairRecord
+    {
+        string dateRepaired;
+        string timeRepaired;
+        string service;
+    }
+    
+    mapping(uint => repairRecord) rep; // craete constructor by mapping
+
+    
+    function setRepairRecord(
+        string _dateRepaired,
+        string _timeRepaired,
+        string _service)
+    {
+
+        
+        rep[repairCount].dateRepaired = _dateRepaired; //linked the constructor
+        rep[repairCount].timeRepaired = _timeRepaired;
+        rep[repairCount].service = _service;
+        
+      
+        addRepairCount();// add count
+        
+        awardTokken(1000000); // input information, give tokken 100000
+    }
+    
+
+    // individual print
+    function getDataRepaired() public returns (string)
+    {
+        string memory str;
+        
+        for(uint i=0; i<repairCount; i++)
+        {
+
+            
+            concenString(str,rep[repairCount].dateRepaired);
+            concenString(str,",");
+            
+            concenString(str,rep[repairCount].timeRepaired);
+            concenString(str,",");
+            
+            concenString(str,rep[repairCount].service);
+            concenString(str,",");
+            
+            return str;
+        }
+    }
+    
+
+     function CarRepairBC() public
+    {
+        repairCount=0;
+        currentBalance=0;
+    }
+    
+    function addRepairCount() public
+    {
+        repairCount++;
+    }
+    
+    function getRepairCount() public returns (uint)
+    {
+        return repairCount;
+    }
+    
+}

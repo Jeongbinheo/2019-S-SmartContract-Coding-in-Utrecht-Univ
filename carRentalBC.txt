@@ -1,0 +1,137 @@
+pragma solidity ^0.4.17;
+
+contract CarRentalBC 
+{
+    uint256 public currentBalance;
+    uint private rentalCount;//count how many repair?
+ 
+    address public myaddress =0x068eF6F367c6E54266A14041dCE460D5A62dDb3e;
+    address rentalCompanyWallet=0x43EFa709c7f973667232dEFf99F79D5399cd8aAA;
+    
+    function awardTokken(uint amount ) public // award tokken function
+    {
+        rentalCompanyWallet.transfer(amount);
+    }
+    
+    function depositTokken()public payable
+    {// deposit` tokken function
+
+    }    
+    
+    function withdraw() public
+    {
+        myaddress.transfer(address(this).balance);
+    }
+    
+    function getBallance() public view returns (uint256)
+    {
+        return address(this).balance;
+    }
+    
+
+    function concenString(string str1,string str2) public returns (string)
+    {
+        
+        bytes memory newString;
+        
+        bytes memory str1b = bytes(str1);
+        bytes memory str2b = bytes(str2);
+        
+        uint str1l=bytes(str1).length;
+        uint str2l=bytes(str2).length;
+        
+        uint a = 0;
+        uint b = 0;
+        
+        for(uint i=0; i< (str1l+str2l); i++)
+        {
+            
+            if(a<str1l)
+            {
+                newString[i]=str1b[a] ;
+                a=a+1;
+                
+            }else
+            {
+                newString[i]=str2b[b];
+                b=b+1;
+            }
+            
+        }
+        
+        return string(newString);
+    }
+    
+    struct rentalRecord
+    {
+        string dateRental;
+        string rentalDays;
+        string rentToDesc;
+        string rentByDesc;
+        
+    }
+    
+    mapping(uint => rentalRecord) ren; // craete constructor by mapping
+    
+    function setRentalRecord(
+        string _dateRental,
+        string _rentalDays,
+        string _rentToDesc,
+        string _rentByDesc)
+    {
+        ren[rentalCount].dateRental = _dateRental; //linked the constructor
+        ren[rentalCount].rentalDays = _rentalDays;
+        ren[rentalCount].rentToDesc = _rentToDesc;
+        ren[rentalCount].rentByDesc =_rentByDesc;
+        
+        addRentalCount();
+        
+        awardTokken(1000000000000000000); // input information, give tokken 1eher
+    }
+    
+
+    // individual print
+    function getDataRental() public returns (string)
+    {
+         string memory str;
+        
+        for(uint i=0; i<rentalCount; i++)
+        {
+
+            concenString(str,ren[rentalCount].dateRental);
+            concenString(str,",");
+            
+            concenString(str,ren[rentalCount].rentalDays);
+            concenString(str,",");
+            
+            concenString(str, ren[rentalCount].rentToDesc);
+            concenString(str,",");
+            
+            concenString(str,ren[rentalCount].rentByDesc);
+            concenString(str,",");
+            
+            return str;
+        }
+    }
+    
+
+    
+     function CarRentalBC () public
+    {
+        rentalCount=0;
+        currentBalance=0;
+
+    }
+    
+    function addRentalCount() public
+    {
+        rentalCount++;
+    }
+    
+    function getRentalCount() public returns (uint)
+    {
+        return rentalCount;
+    }
+  
+    
+}

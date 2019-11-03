@@ -1,0 +1,117 @@
+pragma solidity ^0.4.12;
+
+
+contract CarAccidentBC {
+
+    uint public currentBalance;
+    
+    struct AccidentRecord
+    {
+        string dateAccident;
+        string timeAccident;
+        string description;
+    }
+    
+    int numAccidentRecords;
+    address public myaddress =0x068eF6F367c6E54266A14041dCE460D5A62dDb3e;
+    address public insuranceAddress=0x43EFa709c7f973667232dEFf99F79D5399cd8aAA;
+  
+    mapping (int => AccidentRecord) accidentRecords;
+    
+    function CarAccidentBC() public
+    {
+        numAccidentRecords = 0;
+        currentBalance=0;
+        
+    }
+    
+    function depositTokken()public payable
+    {// deposit` tokken function
+
+    }    
+    
+    function withdraw() public
+    {
+        myaddress.transfer(address(this).balance);
+    }
+    
+    function getBallance() public
+    {
+        currentBalance  = address(this).balance;
+    }
+    
+    function awardToken(uint amount) public 
+    {
+        insuranceAddress.transfer(amount);
+
+    }
+
+    
+    function strAppend(string s1, string s2) public returns (string) 
+    {
+        bytes newString;
+        
+        bytes memory str1b = bytes(s1);
+        bytes memory str2b = bytes(s2);
+        
+        uint str1l=bytes(s1).length;
+        uint str2l=bytes(s2).length;
+        uint a =0;
+        uint b=0;
+        for(uint i=0; i< (str1l+str2l); i++)
+        {
+            
+            if(a<str1l)
+            {
+                newString[i]=str1b[a];
+                a=a+1;
+                
+            }
+            else
+            {
+                newString[i]=str2b[b];
+                b=b+1;
+            }
+            
+        }
+        return string(newString);
+    }
+    
+    function setAccidentRecord(string _dateAccident,
+        string _timeAccident,
+        string _description) public
+    {
+       
+        accidentRecords[numAccidentRecords].dateAccident = _dateAccident;
+        accidentRecords[numAccidentRecords].timeAccident = _timeAccident;
+        accidentRecords[numAccidentRecords].description = _description;
+        numAccidentRecords = numAccidentRecords + 1;
+        
+        
+         awardToken(10);
+    }
+    
+    
+    function getDateAccident() public returns (string)
+    {
+        string ret;
+        for(int i= 0; i< numAccidentRecords; i++)
+        {
+            
+            strAppend(ret,
+            accidentRecords[numAccidentRecords].dateAccident);
+            strAppend(ret,", ");
+            
+            strAppend(ret,
+             accidentRecords[numAccidentRecords].timeAccident);
+            strAppend(ret,", ");
+            
+            strAppend(ret,
+             accidentRecords[numAccidentRecords].description);
+            strAppend(ret,", ");
+        }
+        
+        return ret;
+    }
+
+}

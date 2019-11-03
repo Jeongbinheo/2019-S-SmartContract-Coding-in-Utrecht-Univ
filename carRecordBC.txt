@@ -1,0 +1,129 @@
+pragma solidity ^0.4.12;
+
+contract CarRecordBC {
+
+    uint public currentBalance;
+
+    struct CarRecord
+    {
+        int registrationNum;
+        string dateOfManufacture;
+        string originOfManufacture;
+        string vin;
+        string model;
+        string make;
+        int numCyclinders;
+        int numEngine;
+        int mileage;
+    }
+    CarRecord carRecord;
+    int numRegistrationNum;
+    address public myaddress =0x068eF6F367c6E54266A14041dCE460D5A62dDb3e;
+    address public governmentAddress=0x43EFa709c7f973667232dEFf99F79D5399cd8aAA;
+    
+    function CarRecordBC() public
+    {
+        numRegistrationNum = 0;
+        
+        currentBalance=0;
+        
+    }
+    
+   function depositTokken()public payable
+    {// deposit` tokken function
+
+    }    
+    
+    function withdraw() public
+    {
+        myaddress.transfer(address(this).balance);
+    }
+    
+    function getBallance() public
+    {
+        currentBalance  = address(this).balance;
+    }
+    
+
+    
+    function awardToken(uint amount) public 
+    {
+        governmentAddress.transfer(amount);
+
+    }
+    
+    function generateRegisterNum() public returns (int)
+    {
+        numRegistrationNum = numRegistrationNum + 1;
+    }
+    
+     function setCarRecord( 
+        
+        
+        string _dateOfManufacture,
+        string _originOfManufacture,
+        string _vin,
+        string _model,
+        string _make,
+        int _numCyclinders,
+        int _numEngine,
+        int _mileage)
+    {
+        carRecord.registrationNum = generateRegisterNum();
+        carRecord.dateOfManufacture = _dateOfManufacture;
+        carRecord.originOfManufacture = _originOfManufacture;
+        carRecord.vin = _vin;
+        carRecord.model = _model;
+        carRecord.make = _make;
+        carRecord.numCyclinders = _numCyclinders;
+        carRecord.numEngine = _numEngine;
+        carRecord.mileage = _mileage;
+        
+        awardToken(10);
+    }
+    
+    function getRegistrationNum() public returns (int)
+    {
+        return carRecord.registrationNum;        
+    }
+    function getCarRecordDFM() public returns (string)
+    {
+        return carRecord.dateOfManufacture;        
+    }
+    
+    function getCarRecordOFM() public returns (string)
+    {
+        return carRecord.originOfManufacture;        
+    }
+    
+    function getCarRecordVIN() public returns (string)
+    {
+        return carRecord.vin;        
+    }
+    
+    function getCarRecordModel() public returns (string)
+    {
+        return carRecord.model;        
+    }
+    
+    function getCarRecordMake() public returns (string)
+    {
+        return carRecord.make;        
+    }
+    
+    function getCarRecordNumCylinders() public returns (int)
+    {
+        return carRecord.numCyclinders;        
+    }
+    
+    function getCarRecordNumEngine() public returns (int)
+    {
+        return carRecord.numEngine;        
+    }
+    
+    function getCarRecordMileage() public returns (int)
+    {
+        return carRecord.mileage;        
+    }
+    
+}
