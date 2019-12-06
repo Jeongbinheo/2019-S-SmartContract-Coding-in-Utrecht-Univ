@@ -11,11 +11,15 @@ Now I will go on an explanation about the concept of the business model and spec
 > ## UML of Car Onwership
 
 The Picture shown below is UML of our business Model.
-There are 7 nodes(Buyer, Government, Dealer, Seller, Insurancer, Maintenance, Recycle). Each node can access Car(Object) specific function.
+
+There are 7 nodes(Buyer, Government, Dealer, Seller, Insurancer, Maintenance, Recycle). 
+
+Each node can access Car(Object) specific function.
+
+And Our team made the each Object and its function based on this diagram.
+
 
 ![structure](https://blogfiles.pstatic.net/MjAxOTEyMDZfMjkx/MDAxNTc1NTk5NTgzNTY0.igm6SFH5wVTSR0nFDmUPgrCcm9Ni3XQBISda_wx3sBog.0-pBV9ks0ULVIqkSW6RF8zlmQorQz2f39JweGm15Vo0g.JPEG.hdh988/UML.jpg?type=w2)
-
-Our team made the each Object and its function based on this diagram.
 
 
 >## SwimLane Image of Car Onwership
