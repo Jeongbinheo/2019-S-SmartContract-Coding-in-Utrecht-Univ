@@ -9,12 +9,25 @@ Now I will go on an explanation about the concept of the business model and spec
 
 
 > ## UML of Car Onwership
-> 
+
+The Picture shown below is UML of our business Model.
+There are 7 nodes(Buyer, Government, Dealer, Seller, Insurancer, Maintenance, Recycle). Each node can access Car(Object) specific function.
+
+![structure](https://blogfiles.pstatic.net/MjAxOTEyMDZfMjkx/MDAxNTc1NTk5NTgzNTY0.igm6SFH5wVTSR0nFDmUPgrCcm9Ni3XQBISda_wx3sBog.0-pBV9ks0ULVIqkSW6RF8zlmQorQz2f39JweGm15Vo0g.JPEG.hdh988/UML.jpg?type=w2)
+
+Our team made the each Object and its function based on this diagram.
 
 
 >## SwimLane Image of Car Onwership
->
 
+This is the SwimLane Of Car Ownership process. 
+
+The left part of the picture(looked like 5 SwimLane) represents the process of car ownership proceeded by each node.
+
+The right part of the picture represents the On-blockchain Part.
+Also, we put the two-sided-arrow-signal to explain what information is linked to the On-blockchain part and Off-blockchain part. 
+
+![structure](https://blogfiles.pstatic.net/MjAxOTEyMDZfNTIg/MDAxNTc1NTk5OTMyMDky.AbVimgoe41-4ujT_Wj2J4C3mwpufeE7HD-CUT2C8Nbcg.Q8p8nWNVW2iYnDCwk0aL94_BUiNWCNlsAxtd0CY1dmcg.JPEG.hdh988/BPMN%28proposed_case%29.jpg?type=w2)
 
 > ## Composition of CarOwnership
 > 1. [carOwnership](README.md#carOwnership)
