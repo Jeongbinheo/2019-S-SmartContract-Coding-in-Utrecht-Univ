@@ -1,8 +1,11 @@
 # CarOwnerShip - Solidity
 > ## Introduction
-> 
 
+This Codes are made for Lecture of Blockchain Theory and Practice was held in Utretch Summer School of Netherlands.
 
+Our team made the business model of Car Recode and also made the Blockchain System using Solidity programming language.
+ 
+Now I will go on an explanation about the concept of the business model and special part of codes
 
 
 > ## UML of Car Onwership
