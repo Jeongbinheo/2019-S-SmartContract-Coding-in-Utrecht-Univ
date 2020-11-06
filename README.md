@@ -48,8 +48,7 @@ Also, we put the two-sided-arrow-signal to explain what information is linked to
   
   ### **carOwnership** 
 
-```
-pragma solidity ^0.4.12;
+```java
 
 contract CarOwnership {
 
