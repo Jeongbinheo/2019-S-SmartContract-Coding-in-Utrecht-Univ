@@ -56,7 +56,6 @@ contract CarOwnership {
        rentalRecord [] rentalRecords;
     }
     
-    
     struct CarRecord
     {
         string dateOfMainterancet;
@@ -97,7 +96,6 @@ contract CarOwnership {
         int rentalDays;
         string rentToDesc;
         string rentByDesc;
-        
     }
 
     function setCarRecord(string _dateOfMainterancet,
@@ -158,9 +156,8 @@ contract CarTransanctionBC
 
     function concenString(string str1,string str2) public returns (string)
     {
-        
         bytes memory newString;
-        
+      
         bytes memory str1b = bytes(str1);
         bytes memory str2b = bytes(str2);
         
@@ -197,7 +194,7 @@ contract CarTransanctionBC
         string sellerDesc;
     }
     
-    mapping(uint => transanctionRecord) trans; // craete constructor by mapping
+    mapping(uint => transanctionRecord) trans; //  **craete constructor by mapping**
     
     function setTransanctionRecord(
         string _dateTransanction,
@@ -214,8 +211,7 @@ contract CarTransanctionBC
         
         awardTokken(10); // input information, give tokken 10
     }
-    
-
+  
     // individual print
     function getDataTransanction() public returns (string)
     {
@@ -245,7 +241,6 @@ contract CarTransanctionBC
     {
         transanctionCount=0;
         currentBalance=0;
-        
     }
     
     function addTransanctionCount() public
