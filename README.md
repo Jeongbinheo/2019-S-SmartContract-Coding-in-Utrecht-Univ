@@ -35,16 +35,8 @@ Also, we put the two-sided-arrow-signal to explain what information is linked to
 
 > ## Composition of CarOwnership
 > 1. [carOwnership](README.md#carOwnership)
->
-> 2. [carRecordBC](README.md#carRecordBC)
->
-> 3. [carAccidentBC](README.md#carAccidentBC)
->
-> 4. [carRentalBC](README.md#carRentalBC)
->
-> 5. [carRepairBC](README.md#carRepairBC)
->
->6. [carTransantionBC](README.md#carTransantionBC)
+
+> 2. [carTransantionBC](README.md#carTransantionBC)
   
   ### **carOwnership** 
 
