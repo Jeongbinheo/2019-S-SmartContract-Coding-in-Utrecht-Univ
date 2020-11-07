@@ -119,13 +119,13 @@ contract CarOwnership {
         int mileage;
     }
 }
-
+```
 <br/>
 
 >> ### CarTransantionBC
 
-```
-pragma solidity ^0.4.12;
+
+```java
 
 contract CarTransanctionBC 
 {
