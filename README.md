@@ -1,11 +1,11 @@
 # CarOwnerShip - Solidity
 > ## Introduction
 
-**This Repository is written refering Lecture of Blockchain Theory and Practice was held in Utretch Summer School of Netherlands.**
+- **This Repository is written refering Lecture of Blockchain Theory and Practice was held in Utretch Summer School of Netherlands.**
 
-**Our team made the business model of Car Recode and also made the simple blockchain application(Really prototype ver) using Solidity programming language.**
+  **Our team made the business model of Car Recode and also made the simple blockchain application(Really prototype ver) using Solidity programming language.**
 
-**Now I will go on an explanation about the concept of the business model and special part of codes.**
+  **Now I will go on an explanation about the concept of the business model and special part of codes.**
 
 
 > ## UML of Car Onwership
