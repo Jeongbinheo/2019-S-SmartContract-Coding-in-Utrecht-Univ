@@ -1,11 +1,11 @@
 # CarOwnerShip - Solidity
 > ## Introduction
 
-This Codes are made for Lecture of Blockchain Theory and Practice was held in Utretch Summer School of Netherlands.
+This Repository is written refering Lecture of Blockchain Theory and Practice was held in Utretch Summer School of Netherlands.
 
-Our team made the business model of Car Recode and also made the Blockchain System using Solidity programming language.
- 
-Now I will go on an explanation about the concept of the business model and special part of codes
+Our team made the business model of Car Recode and also made the simple blockchain application(Really prototype ver) using Solidity programming language.
+
+Now I will go on an explanation about the concept of the business model and special part of codes.
 
 
 > ## UML of Car Onwership
@@ -42,6 +42,7 @@ Also, we put the two-sided-arrow-signal to explain what information is linked to
   
 >> ### **carOwnership** 
 
+**This is main Contract which have the Record struct and Record Set function.**
 
 ```java
 
@@ -122,6 +123,7 @@ contract CarOwnership {
 
 >> ### CarTransantionBC
 
+** This contract can provide data type necessary for transcation and function concerned transaction.
 
 ```java
 
@@ -133,13 +135,13 @@ contract CarTransanctionBC
     address public myaddress =0x068eF6F367c6E54266A14041dCE460D5A62dDb3e;
     address public seller=0x43EFa709c7f973667232dEFf99F79D5399cd8aAA;
 
-    function awardTokken(uint amount ) public // award tokken function
+    function awardTokken(uint amount) public // award tokken function
     {
         seller.transfer(amount);
     }
     
     function depositTokken()public payable
-    {// deposit` tokken function
+    {// deposit tokken function
 
     }    
     
