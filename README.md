@@ -123,7 +123,7 @@ contract CarOwnership {
 
 >> ### CarTransantionBC
 
-** This contract can provide data type necessary for transcation and function concerned transaction.
+**This contract can provide data type necessary for transcation and function concerned transaction.**
 
 ```java
 
