@@ -33,7 +33,7 @@ Also, we put the two-sided-arrow-signal to explain what information is linked to
 
 ![structure](https://blogfiles.pstatic.net/MjAxOTEyMDZfNTIg/MDAxNTc1NTk5OTMyMDky.AbVimgoe41-4ujT_Wj2J4C3mwpufeE7HD-CUT2C8Nbcg.Q8p8nWNVW2iYnDCwk0aL94_BUiNWCNlsAxtd0CY1dmcg.JPEG.hdh988/BPMN%28proposed_case%29.jpg?type=w2)
 
-> ## Composition of CarOwnership
+> ## Important contract of CarOwnership
 > 1. [carOwnership](README.md#carOwnership)
 >
 > 2. [carTransantionBC](README.md#carTransantionBC)
